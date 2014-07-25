@@ -4,10 +4,7 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Elizabeth's and Edward's Wedding</h1>
-    <h3>October 4th, 3pm</h3>
-    <h3>The College Club of Boston</h3>
-    <h3>44 Commonwealth Ave, Boston, MA 02116</h3>
+    <%= render 'shared/info' %>
 
     <p>Please RSVP with your <%= link_to 'menu choice', edit_rsvp_url(@invite.token) %>.</p>
   </body>
