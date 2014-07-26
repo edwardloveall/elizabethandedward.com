@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140724230059) do
+ActiveRecord::Schema.define(version: 20140725022229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "choices", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "attending"
+    t.integer  "meal"
+    t.boolean  "friday"
+    t.integer  "person_id"
+  end
+
+  add_index "choices", ["person_id"], name: "index_choices_on_person_id", using: :btree
 
   create_table "invites", force: true do |t|
     t.datetime "created_at"

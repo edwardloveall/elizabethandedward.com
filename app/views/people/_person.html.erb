@@ -1,0 +1,6 @@
+<div class="person">
+  <header><%= person.name %></header>
+  <div class="choice meal">
+    <%= render partial: 'meal_choices', locals: { person: person } %>
+  </div>
+</div>

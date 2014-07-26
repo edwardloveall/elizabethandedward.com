@@ -9,8 +9,8 @@ class PeopleController < ApplicationController
 
   def create
     @person = Person.new(person_params)
-
     if @person.save
+      @person.choice = Choice.create
       flash[:success] = "#{@person.name} created"
       redirect_to people_path
     else

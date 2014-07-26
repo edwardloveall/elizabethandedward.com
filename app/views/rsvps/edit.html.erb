@@ -1,6 +1,4 @@
 <%= render 'shared/info' %>
 
 <h1>What would you like to eat?</h1>
-<%= content_tag_for :div, @people do |person| %>
-  <header><%= person.name %></header>
-<% end %>
+<%= render @people %>
