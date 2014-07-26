@@ -1,3 +1,3 @@
 <% Choice.meals.each do |meal, i| %>
-  <%= link_to meal.titleize, person_choice_path(person.id, person.choice.id, 'choice[meal]' => i), method: :put, remote: true %>
+  <%= link_to meal.titleize, person_choice_path(person.id, person.choice.id, 'choice[meal]' => meal), method: :put, remote: true, data: { meal: meal }, class: person.choice.decorate.selected_meal_classes(meal) %>
 <% end %>

@@ -1,0 +1,9 @@
+div.choices {
+  &.meal {
+    a.choice {
+      &.selected {
+        background: red;
+      }
+    }
+  }
+}

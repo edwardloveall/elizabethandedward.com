@@ -11,7 +11,6 @@ class ChoiceController < ApplicationController
   private
 
   def choice_params
-    params[:choice][:meal] = params[:choice][:meal].to_i
     params.require(:choice).permit(:meal)
   end
 end
