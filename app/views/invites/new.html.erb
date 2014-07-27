@@ -1,7 +1,5 @@
 <%= simple_form_for @invite do |form| %>
   <%= form.input :email %>
-  <div class="invite-list">
-    <%= form.collection_check_boxes :person_ids, Person.all, :id, :name, {}, { multiple: true } %>
-  </div>
+  <%= form.association :people, as: :check_boxes %>
   <%= form.submit 'Send invite' %>
 <% end %>
