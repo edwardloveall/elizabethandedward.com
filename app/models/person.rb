@@ -17,4 +17,8 @@ class Person < ActiveRecord::Base
       'people/absent'
     end
   end
+
+  def name
+    self.attributes['name'] || 'Guest'
+  end
 end

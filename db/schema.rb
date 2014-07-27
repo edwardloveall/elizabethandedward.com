@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140725022229) do
+ActiveRecord::Schema.define(version: 20140727210857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20140725022229) do
     t.datetime "updated_at"
     t.string   "email"
     t.string   "token"
+    t.boolean  "allow_plus_one", default: false
+    t.datetime "plus_one_at"
   end
 
   create_table "people", force: true do |t|
@@ -39,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140725022229) do
     t.datetime "updated_at"
     t.string   "name"
     t.integer  "invite_id"
+    t.boolean  "plus_one",   default: false
   end
 
   add_index "people", ["invite_id"], name: "index_people_on_invite_id", using: :btree

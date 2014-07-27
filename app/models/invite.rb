@@ -12,4 +12,13 @@ class Invite < ActiveRecord::Base
       end
     end
   end
+
+  def guest_added?
+    self.plus_one_at.try(:past?) || false
+  end
+
+  def add_plus_one
+    choice = Choice.create(attending: true)
+    person = self.people.create(plus_one: true, choice: choice)
+  end
 end

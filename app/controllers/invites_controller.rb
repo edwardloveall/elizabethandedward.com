@@ -17,6 +17,6 @@ class InvitesController < ApplicationController
   private
 
   def invite_params
-    params.require(:invite).permit(:email, person_ids: [])
+    params.require(:invite).permit(:email, :allow_plus_one, person_ids: [])
   end
 end

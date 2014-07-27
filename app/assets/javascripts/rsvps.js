@@ -21,4 +21,8 @@ $(document).ready(function () {
   $(document).on('ajax:success', 'a.attendance', function(event, data, status, xhr) {
     $(this).parent('div.person').replaceWith(data);
   });
+
+  $(document).on('ajax:success', 'a.plus-one', function(event, data, status, xhr) {
+    $(this).parent('div.person').replaceWith(data);
+  });
 });
