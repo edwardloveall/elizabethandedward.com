@@ -1,5 +1,5 @@
 class ChoiceController < ApplicationController
-  def meal
+  def update
     if update_choice
       render json: choice_params
     end
@@ -24,6 +24,6 @@ class ChoiceController < ApplicationController
   end
 
   def choice_params
-    params.require(:choice).permit(:meal, :attending)
+    params.require(:choice).permit(:meal, :attending, :friday)
   end
 end

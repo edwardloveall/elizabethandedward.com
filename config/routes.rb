@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   resources :people, except: :show do
-    resources :choice, only: [] do
+    resources :choice, only: [:update] do
       member do
         put :attending
-        put :meal
       end
     end
   end

@@ -1,9 +1,7 @@
-div.choices {
-  &.meal {
-    a.choice {
-      &.selected {
-        background: red;
-      }
+div.person {
+  a.choice {
+    &.selected {
+      background: tomato;
     }
   }
 }

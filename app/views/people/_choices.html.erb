@@ -1,9 +1,10 @@
 <div class="person">
   <header><%= choices.name %></header>
-  <div class="choices meal">
+  <div class="choices meals">
     <% Choice.meals.each do |meal, i| %>
-  <%= link_to meal.titleize, meal_person_choice_path(choices.id, choices.choice.id, 'choice[meal]' => meal), method: :put, remote: true, data: { meal: meal, type: 'json' }, class: choices.choice.decorate.selected_meal_classes(meal) %>
+  <%= link_to meal.titleize, person_choice_path(choices.id, choices.choice.id, 'choice[meal]' => meal), method: :put, remote: true, data: { meal: meal, type: 'json' }, class: choices.choice.decorate.selected_meal_classes(meal) %>
     <% end %>
   </div>
-  <%= link_to 'Not Attending?', attending_person_choice_path(choices.id, choices.choice.id, 'choice[attending]' => false), method: :put, remote: true, data: { type: 'html' }, class: 'attendance' %>
+  <%= link_to 'Join us Friday?', person_choice_path(choices.id, choices.choice.id, 'choice[friday]' => !choices.choice.friday?), method: :put, remote: true, data: { friday: nil, type: 'json' }, class:  choices.choice.decorate.selected_friday_classes %>
+  <%= link_to 'Not Attending?', attending_person_choice_path(choices.id, choices.choice.id, 'choice[attending]' => false), method: :put, remote: true, data: { type: 'html' }, class: 'choice attendance' %>
 </div>
