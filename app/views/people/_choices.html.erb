@@ -1,0 +1,9 @@
+<div class="person">
+  <header><%= choices.name %></header>
+  <div class="choices meal">
+    <% Choice.meals.each do |meal, i| %>
+  <%= link_to meal.titleize, meal_person_choice_path(choices.id, choices.choice.id, 'choice[meal]' => meal), method: :put, remote: true, data: { meal: meal, type: 'json' }, class: choices.choice.decorate.selected_meal_classes(meal) %>
+    <% end %>
+  </div>
+  <%= link_to 'Not Attending?', attending_person_choice_path(choices.id, choices.choice.id, 'choice[attending]' => false), method: :put, remote: true, data: { type: 'html' }, class: 'attendance' %>
+</div>

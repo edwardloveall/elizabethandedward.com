@@ -1,0 +1,4 @@
+<div class="person absent">
+  <header><%= absent.name %></header>
+  <%= link_to 'Attending?', attending_person_choice_path(absent.id, absent.choice.id, 'choice[attending]' => true), method: :put, remote: true, data: { type: 'html' }, class: 'attendance' %>
+</div>
