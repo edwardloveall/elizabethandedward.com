@@ -15,8 +15,7 @@ class ChoiceController < ApplicationController
 
   def update_choice
     @person = find_person
-    choice = @person.choice
-    choice.update(choice_params)
+    @person.choice.update(choice_params)
   end
 
   def find_person

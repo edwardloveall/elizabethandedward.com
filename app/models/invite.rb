@@ -18,7 +18,8 @@ class Invite < ActiveRecord::Base
   end
 
   def add_plus_one
-    choice = Choice.create(attending: true)
-    person = self.people.create(plus_one: true, choice: choice)
+    person = self.people.create(plus_one: true)
+    person.choice.update(attending: true)
+    person
   end
 end

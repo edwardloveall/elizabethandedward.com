@@ -67,7 +67,6 @@ module Rsvp
       def people!
         Rsvp::Data::PEOPLE_NAMES.each do |name|
           person = Person.create(name: name)
-          person.choice = Choice.create
         end
       end
 
