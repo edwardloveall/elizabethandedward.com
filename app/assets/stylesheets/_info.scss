@@ -1,0 +1,67 @@
+header.title {
+  margin: $base-line-height 0;
+}
+
+section.pictures {
+  min-height: 200px;
+}
+
+a.venue,
+div.picture {
+  @include span-columns(4);
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid $base-border-color;
+  border-radius: $base-line-height / 4;
+  min-height: 200px;
+}
+
+a.venue {
+  @include transition(color .2s ease);
+
+  background-image: url(map.png);
+  color: $dark-gray;
+  font-weight: 700;
+  display: table;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &:before {
+    @include position(absolute, 0px 0 0 0);
+    @include transition(opacity .2s ease);
+
+    background: transparent url(map-fade.png) no-repeat center center;
+    background-size: inherit;
+    border-radius: inherit;
+    content: '';
+    height: 100%;
+    opacity: 1.0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: transparent;
+
+    &:before {
+      opacity: 0.0;
+    }
+  }
+
+  div.address {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+div.picture {
+  &.first { background-image: url(ee-first.png) }
+
+  &.second {
+    background-image: url(ee-second.png);
+    margin-right: 0;
+  }
+}

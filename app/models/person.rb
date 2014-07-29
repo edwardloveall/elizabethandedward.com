@@ -4,6 +4,8 @@ class Person < ActiveRecord::Base
   belongs_to :invite
   has_one :choice
 
+  default_scope -> { order(name: :asc) }
+
   def create_choice
     Choice.create(person: self)
   end

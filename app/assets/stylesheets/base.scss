@@ -1,0 +1,35 @@
+body {
+  background-color: $base-accent-color;
+  padding: $base-line-height;
+}
+
+main {
+  @include outer-container();
+
+  background-color: $base-background-color;
+  border-radius: $base-line-height / 4;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  padding: $gutter;
+}
+
+h1, h3, h5 {
+  text-align: center;
+}
+
+h1 {
+  font-weight: 300;
+
+  strong {
+    font-weight: 700;
+  }
+}
+
+h3 {
+  font-size: $base-font-size;
+}
+
+h5 {
+  color: $light-gray;
+  font-weight: 300;
+}
