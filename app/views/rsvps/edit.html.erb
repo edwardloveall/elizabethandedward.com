@@ -1,5 +1,8 @@
 <%= render 'shared/info' %>
 
-<h1>What would you like to eat?</h1>
-<%= render @people %>
-<%= render @invite.plus_one %>
+
+<section class="people">
+  <h1>Attendees</h1>
+  <%= render @people %>
+  <%= render @invite.plus_one %>
+</section>

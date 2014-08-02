@@ -25,8 +25,8 @@ a.venue {
   color: $dark-gray;
   font-weight: 700;
   display: table;
-  position: relative;
   overflow: hidden;
+  position: relative;
   z-index: 1;
 
   &:before {
@@ -35,7 +35,6 @@ a.venue {
 
     background: transparent url(map-fade.png) no-repeat center center;
     background-size: inherit;
-    border-radius: inherit;
     content: '';
     height: 100%;
     opacity: 1.0;

@@ -1,0 +1,50 @@
+$absent-background-color: rgba(230, 230, 230, 1);
+
+@mixin person {
+  border: 1px solid $base-border-color;
+  border-radius: $base-line-height / 4;
+  padding: $base-line-height;
+}
+
+section.people {
+  h1 {
+    margin: $base-line-height;
+  }
+}
+
+div.person {
+  @include span-columns(4);
+
+  &.absent {
+    a {
+      @include person;
+      @include transition(background-color 0.2s ease);
+
+      background-color: $absent-background-color;
+      color: $medium-gray;
+      display: block;
+      text-align: center;
+
+      &:hover {
+        background-color: $white;
+      }
+    }
+  }
+
+  &.attending {
+    @include person;
+    background-color: $white;
+  }
+
+  &:nth-of-type(3n) {
+    margin-right: 0;
+  }
+
+  header {
+    font-weight: 700;
+  }
+}
+
+h1 {
+  clear: both;
+}
