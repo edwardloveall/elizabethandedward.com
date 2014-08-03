@@ -2,8 +2,8 @@ $absent-background-color: rgba(230, 230, 230, 1);
 
 @mixin person {
   border: 1px solid $base-border-color;
-  border-radius: $base-line-height / 4;
-  padding: $base-line-height;
+  border-radius: .2em;
+  padding: $base-line-height / 2 $base-line-height;
 }
 
 section.people {
@@ -14,6 +14,8 @@ section.people {
 
 div.person {
   @include span-columns(4);
+
+  margin-bottom: 1em;
 
   &.absent {
     a {
@@ -42,6 +44,83 @@ div.person {
 
   header {
     font-weight: 700;
+    margin-bottom: 1em;
+  }
+
+  a.choice {
+    @include transition(color .2s ease, background-color .2s ease, background-position-y .3s $ease-out-quad);
+
+    background: $absent-background-color asset-url('selected.png') no-repeat 6px 40px;
+    border-radius: .2em;
+    color: $medium-gray;
+    margin-bottom: golden-ratio($base-line-height, -1);
+    text-align: center;
+
+    &.selected,
+    &:hover {
+      background-color: $teal;
+      color: $white;
+    }
+
+    &.selected {
+      background-position-y: center;
+    }
+  }
+
+  div.choices.meals {
+    @include clearfix;
+
+    border-bottom: 1px solid $light-gray;
+    margin-bottom: 1em;
+
+    a.meal {
+      @include span-columns(2 of 4);
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+
+      &:last-child {
+        @include span-columns(4 of 4);
+      }
+    }
+  }
+
+  a.choice.friday {
+    @include span-columns(4 of 4);
+
+    clear: both;
+    position: relative;
+
+    p.friday-explain {
+      @include position(absolute, 0 0 2em 0);
+      @include transition(opacity .3s ease, bottom .3s ease);
+
+      background-color: $dark-gray;
+      border-radius: .2em;
+      font-size: .8em;
+      opacity: 0;
+      padding: $base-line-height / 2;
+      pointer-events: none;
+      width: 100%;
+    }
+
+    &:hover {
+      p.friday-explain {
+        bottom: 1.5em;
+        opacity: 1;
+      }
+    }
+  }
+
+  a.choice.attendance {
+    background-color: transparent;
+    color: $medium-gray;
+    margin-bottom: 0;
+
+    &:hover {
+      color: $dark-gray;
+    }
   }
 }
 
