@@ -1,0 +1,24 @@
+body.invites {
+  a.new-invite {
+    background-color: $teal;
+    border-radius: .2em;
+    color: $white;
+    padding: $base-line-height / 2 $base-line-height;
+  }
+
+  tr.invite {
+    th {
+      padding: $base-line-height 0 0;
+    }
+  }
+
+  tr.absent {
+    td.meal, td.friday {
+      color: transparent;
+    }
+
+    td.name {
+      color: $medium-gray;
+    }
+  }
+}

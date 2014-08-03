@@ -6,6 +6,8 @@ class Person < ActiveRecord::Base
 
   default_scope -> { order(name: :asc) }
 
+  delegate :attending, :meal, :friday, to: :choice
+
   def create_choice
     Choice.create(person: self)
   end

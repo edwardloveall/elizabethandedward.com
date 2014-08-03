@@ -1,4 +1,8 @@
 class InvitesController < ApplicationController
+  def index
+    @invites = Invite.with_people
+  end
+
   def new
     @invite = Invite.new
   end

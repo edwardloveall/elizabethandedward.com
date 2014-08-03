@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       end
     end
   end
-  resources :invites, only: [:new, :create]
+  resources :invites, only: [:index, :new, :create]
   resources :rsvps, only: [:edit, :update] do
     member do
       post :add_plus_one

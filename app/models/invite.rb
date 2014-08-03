@@ -3,6 +3,8 @@ class Invite < ActiveRecord::Base
 
   accepts_nested_attributes_for :people
 
+  scope :with_people, -> { includes(:people) }
+
   def generate_token!
     loop do
       token = SecureRandom.hex(20)
