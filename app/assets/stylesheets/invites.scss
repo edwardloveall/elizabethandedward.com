@@ -22,3 +22,9 @@ body.invites {
     }
   }
 }
+
+div.invite_people {
+  @include columns(3);
+
+  margin-bottom: $base-line-height;
+}

@@ -1,0 +1,7 @@
+<nav class="main">
+  <% if signed_in? %>
+    <%= link_to 'People', people_path %>
+    <%= link_to 'Invites', invites_path %>
+    <%= link_to "Sign out", session_path, method: :delete %>
+  <% end %>
+</nav>

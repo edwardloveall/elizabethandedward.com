@@ -1,6 +1,6 @@
 <%= simple_form_for @invite do |form| %>
   <%= form.input :email %>
-  <%= form.association :people, as: :check_boxes %>
+  <%= form.association :people, as: :check_boxes, label: false %>
   <%= form.input :allow_plus_one %>
   <%= form.submit 'Send invite' %>
 <% end %>
