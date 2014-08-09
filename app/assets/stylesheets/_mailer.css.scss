@@ -1,0 +1,50 @@
+$dark-gray: #333;
+$teal: rgba(24, 187, 197, 1);
+$white: rgba(255, 255, 255, 1);
+
+body {
+  background-color: $teal;
+  color: $dark-gray;
+  font-family: Helvetica, sans-serif;
+  padding: 20px;
+}
+
+center {
+  background-color: $white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+td {
+  text-align: center;
+}
+
+td.header {
+  font-size: 24px;
+  font-weight: 100;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+
+  strong {
+    font-weight: 700;
+  }
+}
+
+td.rsvp {
+  padding: 2em 0;
+
+  p {
+    background-color: $teal;
+    border-radius: 4px;
+
+    a {
+      color: $white;
+      display: block;
+      text-decoration: none;
+      padding: 1em;
+    }
+  }
+}

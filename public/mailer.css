@@ -1,0 +1,43 @@
+body {
+  background-color: #18bbc5;
+  color: #333333;
+  font-family: Helvetica, sans-serif;
+  padding: 20px;
+}
+
+center {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+td {
+  text-align: center;
+}
+
+td.header {
+  font-size: 24px;
+  font-weight: 100;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+td.header strong {
+  font-weight: 700;
+}
+
+td.rsvp {
+  padding: 2em 0;
+}
+td.rsvp p {
+  background-color: #18bbc5;
+  border-radius: 4px;
+}
+td.rsvp p a {
+  color: white;
+  display: block;
+  text-decoration: none;
+  padding: 1em;
+}

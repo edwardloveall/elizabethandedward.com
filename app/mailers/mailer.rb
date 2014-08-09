@@ -4,6 +4,6 @@ class Mailer < ActionMailer::Base
   def send_invite(invite)
     @invite = invite
 
-    mail(to: @invite.email, subject: "You're invited to Elizabeth's and Edward's wedding!")
+    mail(to: @invite.email, subject: %q{Elizabeth and Edward Get Married})
   end
 end

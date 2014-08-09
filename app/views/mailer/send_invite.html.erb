@@ -2,10 +2,20 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <link rel="stylesheet" href="/mailer.css">
   </head>
   <body>
-    <%= render 'shared/info' %>
-
-    <p>Please RSVP with your <%= link_to 'menu choice', edit_rsvp_url(@invite.token) %>.</p>
+    <center>
+      <table>
+        <tr><td class="header"><strong>Elizabeth</strong> and <strong>Edward</strong> Get Married</td></tr>
+        <tr><td>Ceremony &amp; Reception</td></tr>
+        <tr><td>October 4th, 3pm</td></tr>
+        <tr><td>44 Commonwealth Ave</td></tr>
+        <tr><td>Boston, MA 02116</td></tr>
+        <tr><td class="rsvp">
+          <p><%= link_to 'Please RSVP with your menu choice', edit_rsvp_url(@invite.token) %></p>
+        </td></tr>
+      </table>
+    </center>
   </body>
 </html>
