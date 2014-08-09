@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  root to: 'homes#show'
+
+  resource :home, only: :show
+  resource :session, only: [:new, :create, :destroy]
   resources :people, except: :show do
     resources :choice, only: [:update] do
       member do

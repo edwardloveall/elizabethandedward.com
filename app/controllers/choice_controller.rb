@@ -1,4 +1,6 @@
 class ChoiceController < ApplicationController
+  skip_before_filter :require_login
+
   def update
     if update_choice
       render json: choice_params

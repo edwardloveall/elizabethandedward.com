@@ -1,0 +1,9 @@
+nav.session {
+  @include outer-container();
+
+  padding: $base-line-height;
+
+  a {
+    color: $white;
+  }
+}
