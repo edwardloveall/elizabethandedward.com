@@ -1,9 +1,6 @@
 body.invites {
   a.new-invite {
-    background-color: $teal;
-    border-radius: .2em;
-    color: $white;
-    padding: $base-line-height / 2 $base-line-height;
+    @extend %new-button;
   }
 
   tr.invite {

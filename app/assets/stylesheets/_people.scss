@@ -1,0 +1,15 @@
+table.people {
+  td {
+    a.person {
+      color: $base-font-color;
+    }
+
+    a.delete {
+      color: darken($error-color, 60);
+    }
+  }
+}
+
+a.new-person {
+  @extend %new-button;
+}

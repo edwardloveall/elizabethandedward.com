@@ -54,6 +54,7 @@ div.person {
     border-radius: .2em;
     color: $medium-gray;
     margin-bottom: golden-ratio($base-line-height, -1);
+    position: relative;
     text-align: center;
 
     &.selected,
@@ -62,37 +63,18 @@ div.person {
       color: $white;
     }
 
+    &:hover {
+      p.explain {
+        bottom: 1.5em;
+        opacity: 1;
+      }
+    }
+
     &.selected {
       background-position-y: center;
     }
-  }
 
-  div.choices.meals {
-    @include clearfix;
-
-    border-bottom: 1px solid $light-gray;
-    margin-bottom: 1em;
-
-    a.meal {
-      @include span-columns(2 of 4);
-
-      &:nth-child(2n) {
-        margin-right: 0;
-      }
-
-      &:last-child {
-        @include span-columns(4 of 4);
-      }
-    }
-  }
-
-  a.choice.friday {
-    @include span-columns(4 of 4);
-
-    clear: both;
-    position: relative;
-
-    p.friday-explain {
+    p.explain {
       @include position(absolute, 0 0 2em 0);
       @include transition(opacity .3s ease, bottom .3s ease);
 
@@ -104,13 +86,28 @@ div.person {
       pointer-events: none;
       width: 100%;
     }
+  }
 
-    &:hover {
-      p.friday-explain {
-        bottom: 1.5em;
-        opacity: 1;
+  div.choices.meals {
+    @include clearfix;
+
+    border-bottom: 1px solid $light-gray;
+    margin-bottom: 1em;
+
+    a.meal {
+      @include span-columns(4 of 4);
+
+      &:nth-child(2n) {
+        margin-right: 0;
       }
     }
+  }
+
+  a.choice.friday {
+    @include span-columns(4 of 4);
+
+    clear: both;
+    position: relative;
   }
 
   a.choice.attendance {
@@ -119,7 +116,7 @@ div.person {
     margin-bottom: 0;
 
     &:hover {
-      color: $dark-gray;
+      color: $base-font-color;
     }
   }
 }

@@ -22,7 +22,7 @@ a.venue {
   @include transition(color .2s ease);
 
   background-image: url(map.png);
-  color: $dark-gray;
+  color: $base-font-color;
   font-weight: 700;
   display: table;
   overflow: hidden;

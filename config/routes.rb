@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   resource :home, only: :show
   resource :session, only: [:new, :create, :destroy]
   resources :people, except: :show do
-    resources :choice, only: [:update] do
+    resources :choice, only: [:update], defaults: { format: :json } do
       member do
-        put :attending
+        put :attending, defaults: { format: :html }
       end
     end
   end

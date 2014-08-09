@@ -1,0 +1,24 @@
+<div class="person attending">
+  <header><%= person.name %></header>
+  <div class="choices meals">
+    <%= link_to person_choice_path(person.id, person.choice.id), method: :put, remote: true, data: { meal: 'steak', params: { choice: { meal: 'steak' } } }, class: 'choice meal' do %>
+      <span>Steak</span>
+      <p class="steak explain">Pan-seared 8oz Ribeye, Creamy Mashed Potatoes, Wilted Spinach and Wild Mushroom Demi-glace (Gluten Free)</p>
+    <% end %>
+    <%= link_to person_choice_path(person.id, person.choice.id), method: :put, remote: true, data: { meal: 'lobster', params: { choice: { meal: 'lobster' } } }, class: 'choice meal' do %>
+      <span>Lobster Ravioli</span>
+      <p class="lobster explain">Lobster Ravioli in Tomato-Cognac Cream Sauce Garnished with Lobster Tail and Pesto Butter</p>
+    <% end %>
+    <%= link_to person_choice_path(person.id, person.choice.id), method: :put, remote: true, data: { meal: 'chicken_fingers_(kids)', params: { choice: { meal: 'chicken_fingers_(kids)' } } }, class: 'choice meal' do %>
+      <span>Chicken Fingers (Kids)</span>
+      <p class="chicken explain">Chicken Fingers and French Fries with Ketchup</p>
+    <% end %>
+  </div>
+  <%= link_to person_choice_path(person.id, person.choice.id, 'choice[friday]' => !person.choice.friday?), method: :put, remote: true, data: { friday: nil }, class:  person.choice.decorate.selected_friday_classes do %>
+    <span>Join us friday?</span>
+    <p class="friday explain">
+      We plan on eating a casual, family friendly dinner somewhere on Friday night. Would you like to join us?
+    </p>
+  <% end %>
+  <%= link_to %q(Can't attend the wedding?), attending_person_choice_path(person.id, person.choice.id, 'choice[attending]' => false), method: :put, remote: true, data: { type: 'html' }, class: 'choice attendance' %>
+</div>

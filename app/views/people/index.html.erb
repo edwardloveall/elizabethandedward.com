@@ -1,8 +1,8 @@
-<%= link_to 'New person', new_person_path %>
+<%= link_to 'New Person', new_person_path, class: 'new-person' %>
 
-<ul>
-  <%= content_tag_for :li, @people do |person| %>
-    <%= link_to person.name, edit_person_path(person) %>
-    <%= link_to 'Delete', person, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' %>
+<table class="people">
+  <%= content_tag_for :tr, @people do |person| %>
+    <%= content_tag :td, link_to(person.name, edit_person_path(person), class: 'person') %>
+    <%= content_tag :td, link_to('Delete', person, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete') %>
   <% end %>
-</ul>
+</table>

@@ -3,6 +3,13 @@ body {
   padding: $base-line-height;
 }
 
+%new-button {
+  background-color: $teal;
+  border-radius: .2em;
+  color: $white;
+  padding: $base-line-height / 2 $base-line-height;
+}
+
 main {
   @include outer-container();
 

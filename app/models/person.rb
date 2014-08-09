@@ -22,7 +22,7 @@ class Person < ActiveRecord::Base
 
   def to_partial_path
     if attending?
-      'people/choices'
+      'people/person'
     else
       'people/absent'
     end
