@@ -1,6 +1,6 @@
 class InvitesController < ApplicationController
   def index
-    @invites = Invite.with_people
+    @invites = Invite.with_people_and_choices
   end
 
   def new

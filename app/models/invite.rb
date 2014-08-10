@@ -3,7 +3,7 @@ class Invite < ActiveRecord::Base
 
   accepts_nested_attributes_for :people
 
-  scope :with_people, -> { includes(:people) }
+  scope :with_people_and_choices, -> { includes([people: :choice]) }
 
   def generate_token!
     loop do
