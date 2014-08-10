@@ -21,7 +21,7 @@ div.picture {
 a.venue {
   @include transition(color .2s ease);
 
-  background-image: url(map.png);
+  background-image: asset-url('map.png');
   color: $base-font-color;
   font-weight: 700;
   display: table;
@@ -33,7 +33,7 @@ a.venue {
     @include position(absolute, 0px 0 0 0);
     @include transition(opacity .2s ease);
 
-    background: transparent url(map-fade.png) no-repeat center center;
+    background: transparent asset-url('map-fade.png') no-repeat center center;
     background-size: inherit;
     content: '';
     height: 100%;
@@ -57,10 +57,10 @@ a.venue {
 }
 
 div.picture {
-  &.first { background-image: url(ee-first.png) }
+  &.first { background-image: asset-url('ee-first.png') }
 
   &.second {
-    background-image: url(ee-second.png);
+    background-image: asset-url('ee-second.png');
     margin-right: 0;
   }
 }
