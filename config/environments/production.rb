@@ -79,4 +79,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  web_root = 'www.elizabethandedward.com'
+  config.action_mailer.default_url_options = { host: web_root }
+  config.action_mailer.asset_host = web_root
+  config.action_controller.asset_host = web_root
 end
