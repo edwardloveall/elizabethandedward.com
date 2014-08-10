@@ -1,3 +1,3 @@
-<div class="person">
-  <%= link_to '+1', add_plus_one_rsvp_path, method: :post, remote: true, data: { params: { invite_id: invite.id, format: :html }}, class: 'plus-one' %>
+<div class="person absent">
+  <%= link_to 'Do you have a guest?', add_plus_one_rsvp_path, method: :post, remote: true, data: { params: { invite_id: invite.id, format: :html }}, class: 'plus-one' %>
 </div>
