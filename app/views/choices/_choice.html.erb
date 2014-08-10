@@ -1,0 +1,11 @@
+<%
+  classes = ['choice', 'meal']
+  if person.choice.meal == meal
+    classes << 'selected'
+  end
+%>
+
+<%= link_to person_choice_path(person.id, person.choice.id), method: :put, remote: true, data: { meal: meal, params: { choice: { meal: meal } } }, class: classes do %>
+  <span><%= meal.titleize %></span>
+  <p class="<%= meal %> explain"><%= explain %></p>
+<% end %>
