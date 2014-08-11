@@ -13,7 +13,7 @@ class PeopleController < ApplicationController
       flash[:success] = "#{@person.name} created"
       redirect_to people_path
     else
-      flash[:alert] = 'There was an error'
+      flash.now[:error] = 'There was an error'
       render :new
     end
   end
@@ -29,7 +29,7 @@ class PeopleController < ApplicationController
       flash[:success] = "#{@person.name} updated"
       redirect_to people_path
     else
-      flash[:alert] = 'There was an error'
+      flash.now[:error] = 'There was an error'
       render :edit
     end
   end
@@ -41,7 +41,7 @@ class PeopleController < ApplicationController
       flash[:success] = "Deleted #{@person.name}"
       redirect_to people_path
     else
-      flash[:alert] = "There was an error deleting #{@person.name}"
+      flash.now[:error] = "There was an error deleting #{@person.name}"
       render :edit
     end
   end

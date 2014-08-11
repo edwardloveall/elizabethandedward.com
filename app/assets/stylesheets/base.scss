@@ -40,3 +40,17 @@ h5 {
   color: $light-gray;
   font-weight: 300;
 }
+
+span.error {
+  background-color: $error-color;
+  color: darken($error-color, 60);
+}
+
+div.flashes {
+  @include outer-container;
+
+  div.alert { @extend %flash-alert; }
+  div.error { @extend %flash-error; }
+  div.notice { @extend %flash-notice; }
+  div.success { @extend %flash-success; }
+}

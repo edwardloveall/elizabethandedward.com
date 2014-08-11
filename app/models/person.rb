@@ -4,6 +4,8 @@ class Person < ActiveRecord::Base
   belongs_to :invite
   has_one :choice
 
+  validates_presence_of :name
+
   default_scope -> { order(name: :asc) }
 
   delegate :attending, :meal, :friday, to: :choice

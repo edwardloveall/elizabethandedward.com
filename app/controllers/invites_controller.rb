@@ -15,6 +15,9 @@ class InvitesController < ApplicationController
       Mailer.send_invite(@invite).deliver
       flash[:success] = 'Invite was sent'
       redirect_to new_invite_path
+    else
+      flash.now[:error] = 'Invite was not sent'
+      render :new
     end
   end
 
